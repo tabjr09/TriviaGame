@@ -1,5 +1,9 @@
 
-    var time = 60;
+    var time = 10;
+
+    var right = 0;
+    var wrong = 10;
+    var checked = 0;
 
     var intervalId;
 
@@ -9,11 +13,21 @@
 
         if (this.checked) {
             $(this).siblings(':checkbox').attr('checked',false);
-            console.log("check box updated");
-            console.log(this);
+
         }
     
     });
+
+    $(':checkbox').click(function(){
+
+        if(this.checked){
+
+            if(this.value === "right"){
+             right++;
+             wrong--;
+            }
+        }
+    })
 
     function run() {
       clearInterval(intervalId);
@@ -33,6 +47,9 @@
         stop();
 
         alert("Time Up!");
+        $("#quiz").hide();
+        console.log("number right: "+ right +", number wrong: "+ wrong);
+        $('#score').html("You got "+right +" correct out of 10. Thanks for playing!")
       }
     }
 
@@ -43,3 +60,19 @@
 
     run();
 
+
+    $('#submit').click(function(){
+
+        time = 0;
+        stop();
+        console.log("Submit button checked.");
+        $("#quiz").hide();
+        //console.log("number right: "+ right +", number wrong: "+ wrong);
+        //$('#score').html("You got "+right +" correct out of 10. Thanks for playing!")
+    })
+
+//if box is checked and value is right, then increment correct variable
+
+//if box is checked and value is wrong, then increment worng variable
+
+//if box is not checked increment wrong variable

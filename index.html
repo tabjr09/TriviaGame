@@ -9,14 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="assets/javascript/game.js"></script>
+    
 </head>
 <body>
+
+    <h2> 90's R&B Trivia!</h2>
     
-    <h2 id ="time-remaining">60 seconds</h2>
+
+    <h3 id ="time-remaining">60 seconds</h3>
+
+    <h3 id ="score"></h3>
     
-  <form>
+  <form id="quiz">
       <div class='q1'>
         <p class="question">1. When Monica is having “one of those days”, what advice does she give her man?</p>
             <input type="checkbox" class="single-checkbox q1-answer" value="wrong"> It's just a woman thing<br>  
@@ -25,79 +29,71 @@
             <input type="checkbox" class="single-checkbox q1-answer" value="wrong">  I need my space<br><br>
       </div>
       <div class='q2'>
-        <p class="question q2">2. 3LW is tired of broken what?</p>
+        <p class="question">2. 3LW is tired of broken what?</p>
             <input type="checkbox" class="single-checkbox q2-answer" value="wrong">Hearts<br>
             <input type="checkbox" class="single-checkbox q2-answer" value="right">Promithes<br>
             <input type="checkbox" class="single-checkbox q2-answer" value="wrong">Trust<br>
             <input type="checkbox" class="single-checkbox q2-answer" value="wrong">Engagements<br><br>
       </div>
       <div class='q3'>
-        <p class="question q3">3. What does Mint Condition want Pretty Brown Eyes to stop doing?</p>
+        <p class="question">3. What does Mint Condition want Pretty Brown Eyes to stop doing?</p>
             <input type="checkbox" class="single-checkbox q3-answer" value="wrong">Being so phine<br>
             <input type="checkbox" class="single-checkbox q3-answer" value="wrong">Calling my phone<br>
             <input type="checkbox" class="single-checkbox q3-answer" value="wrong">Lying to me<br>
             <input type="checkbox" class="single-checkbox q3-answer" value="right">Breaking my heart<br><br>
       </div>
       <div class='q4'>
-        <p class="question q4">4. How do you unbreak Toni Braxton’s Heart?</p>
+        <p class="question">4. How do you unbreak Toni Braxton’s Heart?</p>
             <input type="checkbox" class="single-checkbox q4-answer" value="right">Say you love her again<br>
             <input type="checkbox" class="single-checkbox q4-answer" value="wrong">Propose to her<br>
             <input type="checkbox" class="single-checkbox q4-answer" value="wrong">Stop cheating on her<br>
             <input type="checkbox" class="single-checkbox q4-answer" value="wrong">Come back to her<br><br>
       </div>
       <div class='q5'>
-        <p class="question q5">5. At what time was Usher in his drop top cruing the streets?</p>
+        <p class="question">5. At what time was Usher in his drop top cruing the streets?</p>
             <input type="checkbox" class="single-checkbox q5-answer" value="wrong">2 AM<br>
             <input type="checkbox" class="single-checkbox q5-answer" value="right">7 O'clock<br>
             <input type="checkbox" class="single-checkbox q5-answer" value="wrong">Midnight<br>
             <input type="checkbox" class="single-checkbox q5-answer" value="wrong">3 O'clock<br><br>
       </div>
       <div class='q6'>
-        <p class="question q6">6. What does Xscape need from you?</p>
+        <p class="question">6. What does Xscape need from you?</p>
             <input type="checkbox" class="single-checkbox q66-answer" value="right">Understanding<br>
             <input type="checkbox" class="single-checkbox q6-answer" value="wrong">Your extra time and kiss<br>
             <input type="checkbox" class="single-checkbox q6-answer" value="wrong">Good lovin'<br>
             <input type="checkbox" class="single-checkbox q6-answer" value="wrong">A ring<br><br>
       </div>
       <div class='q7'>
-        <p class="question q7">7. What is Whitney Houston the queen of?</p>
+        <p class="question">7. What is Whitney Houston the queen of?</p>
             <input type="checkbox" class="single-checkbox q7-answer" value="wrong">Dancing<br>
             <input type="checkbox" class="single-checkbox q7-answer" value="wrong">Soul<br>
             <input type="checkbox" class="single-checkbox q7-answer" value="right">The night<br>
             <input type="checkbox" class="single-checkbox q7-answer" value="wrong">Crack<br><br>
       </div>
       <div class='q8'>
-        <p class="question q8">8. Mariah Carey and ODB go back like what?</p>
+        <p class="question">8. Mariah Carey and ODB go back like what?</p>
             <input type="checkbox" class="single-checkbox q8-answer" value="wrong">Preschool kids<br>
             <input type="checkbox" class="single-checkbox q8-answer" value="right">Babies and pacifiers<br>
             <input type="checkbox" class="single-checkbox q8-answer" value="wrong">Mork and Mindy<br>
             <input type="checkbox" class="single-checkbox q8-answer" value="wrong">Ike and Tina<br><br>
       </div>
       <div class='q9'>
-        <p class="question q9">9. How many wishes were Dru Hill from touching the Heavens above?</p>
+        <p class="question">9. How many wishes were Dru Hill from touching the Heavens above?</p>
             <input type="checkbox" class="single-checkbox q9-answer" value="wrong">7<br>
             <input type="checkbox" class="single-checkbox q9-answer" value="wrong">2<br>
             <input type="checkbox" class="single-checkbox q9-answer" value="wrong">5<br>
             <input type="checkbox" class="single-checkbox q9-answer" value="right">3<br><br>
       </div>
       <div class='q10'>
-        <p class="question q10">10. According to Bell Biv Devoe, what should you never trust?</p>
+        <p class="question">10. According to Bell Biv Devoe, what should you never trust?</p>
             <input type="checkbox" class="single-checkbox q10-answer" value="wrong">A girl with no job<br>
             <input type="checkbox" class="single-checkbox q10-answer" value="wrong">A side piece<br>
             <input type="checkbox" class="single-checkbox q10-answer" value="right">A big butt and a smile<br>
             <input type="checkbox" class="single-checkbox q10-answer" value="wrong">A girl named Iesha<br><br>
        </div>
-        <input type="submit" value="Submit">
+        <button id="submit">Submit</button>
     </form>
 </body>
-<script>
-      
-        $(':checkbox').change(function(){
-
-            if (this.checked) {
-                $(this).siblings(':checkbox').attr('checked',false);
-            }
-
-});
-      </script>
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script src="assets/javascript/game.js"></script>
 </html>
