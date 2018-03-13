@@ -1,5 +1,13 @@
 body{
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
-    background-color: skyblue;
+    /*background-color: skyblue;*/
+    background-image: url("../images/90sRB.png");
+
+}
+
+.container{
+
+    border: 5px dotted black;
+    background-color: snow;
 }
