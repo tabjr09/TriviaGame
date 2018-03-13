@@ -7,9 +7,8 @@
 
     var intervalId;
 
-    //console.log(this);
 
-    $('#quiz').hide();
+    $('#quiz').hide(); //hide questions and timer until user starts the game
     $('#time-remaining').hide();
 
     $('#start-button').click(function(){
@@ -56,14 +55,14 @@
 
       if (time === 0) {
 
-        $("#time-remaining").html("Time Up!");
+        $("#time-remaining").html("<strong>Time's Up!</strong>");
 
         stop();
 
         alert("Time Up!");
         $("#quiz").hide();
         console.log("number right: "+ right +", number wrong: "+ wrong);
-        $('#score').html("You got "+right +" correct out of 10. <br> Thanks for playing!")
+        $('#score').html("You got <strong> "+right +"</strong>  correct out of <strong> 10 </strong>. <br> Thanks for playing!")
       }
     }
 
