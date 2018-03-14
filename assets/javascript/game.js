@@ -10,6 +10,7 @@
 
     $('#quiz').hide(); //hide questions and timer until user starts the game
     $('#time-remaining').hide();
+    $('#reset').hide();
 
     $('#start-button').click(function(){
 
@@ -20,6 +21,19 @@
         run();
     });
 
+    $('#reset').click(function(){
+
+        time = 60;
+        var right = 0;
+        var wrong = 10;
+        $('#quiz').hide(); //hide questions and timer until user starts the game
+        $('#time-remaining').hide();
+        $('#reset').hide();
+        $('#score').hide();
+        $('#start-page').show();
+        $(':checkbox').attr('checked',false);
+        
+    });
 
 
     $(':checkbox').change(function(){
@@ -63,6 +77,7 @@
         $("#quiz").hide();
         console.log("number right: "+ right +", number wrong: "+ wrong);
         $('#score').html("You got <strong> "+right +"</strong>  correct out of <strong> 10 </strong>. <br> Thanks for playing!")
+        $('#reset').show();
       }
     }
 
