@@ -8,7 +8,7 @@
 
     function Initialize(){
 
-        time = 10;
+        time = 60;
         right = 0;
         wrong = 10;
         $('#instructions').html("You will have 60 seconds to answer 10 questions based on R&B songs from the 90s.<br>"+
