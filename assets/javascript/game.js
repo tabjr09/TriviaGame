@@ -1,51 +1,53 @@
 
-    var time = 10;
-
-    var right = 0;
-    var wrong = 10;
-    var checked = 0;
-
+    var time;
+    var right;
+    var wrong;
     var intervalId;
 
+    Initialize();
 
-    $('#quiz').hide(); //hide questions and timer until user starts the game
-    $('#time-remaining').hide();
-    $('#reset').hide();
+    function Initialize(){
+
+        time = 10;
+        right = 0;
+        wrong = 10;
+        $('#instructions').html("You will have 60 seconds to answer 10 questions based on R&B songs from the 90s.<br>"+
+            "Let's see what you know! <br> Good Luck!");
+        $('#quiz').hide(); //hide questions and timer until user starts the game
+        $('#time-remaining').hide();
+        $('#reset').hide();
+        $('#submit').hide();
+  
+    }
 
     $('#start-button').click(function(){
 
         console.log("start button clicked");
         $('#quiz').show();
+        $('#submit').show();
+        console.log("quiz is shown");
         $('#time-remaining').show();
         $('#start-page').hide();
         run();
     });
 
-    $('#reset').click(function(){
+    $('#reset').click(function(){ //to play again
 
-        time = 60;
-        var right = 0;
-        var wrong = 10;
-        $('#quiz').hide(); //hide questions and timer until user starts the game
-        $('#time-remaining').hide();
-        $('#reset').hide();
-        $('#score').hide();
-        $('#start-page').show();
-        $(':checkbox').attr('checked',false);
-        
+         $('#score').hide(); //hide score results
+        $('#start-page').show(); //show start page/instructions
+        $(':checkbox').attr('checked',false); //clear the checkboxes
+        Initialize();
     });
 
 
-    $(':checkbox').change(function(){
+    $(':checkbox').change(function(){ //update so that only 1 checkbox canbe selected at a time
 
         if (this.checked) {
             $(this).siblings(':checkbox').attr('checked',false);
-
         }
-    
     });
 
-    $(':checkbox').click(function(){
+    $(':checkbox').click(function(){ //if the correct checkbox is selected update the score
 
         if(this.checked){
 
@@ -56,7 +58,7 @@
         }
     })
 
-    function run() {
+    function run() { //start the timed quiz
       clearInterval(intervalId);
       intervalId = setInterval(decrement, 1000);
     }
@@ -65,19 +67,15 @@
 
       time--;
 
-      $("#time-remaining").html(time + " seconds remaining");
+      $("#time-remaining").html("Time remaining 00:" +time);
 
-      if (time === 0) {
-
+      if (time === 0){ //when time runs out
+        
+        gameOver();
+        
         $("#time-remaining").html("<strong>Time's Up!</strong>");
 
         stop();
-
-        alert("Time Up!");
-        $("#quiz").hide();
-        console.log("number right: "+ right +", number wrong: "+ wrong);
-        $('#score').html("You got <strong> "+right +"</strong>  correct out of <strong> 10 </strong>. <br> Thanks for playing!")
-        $('#reset').show();
       }
     }
 
@@ -89,14 +87,22 @@
 
     $('#submit').click(function(){
 
-       
+        gameOver();
+    
+    })
+
+    function gameOver(){
+
         stop();
         time = 0;
         console.log("Submit button checked.");
-        $("#quiz").empty();
+        $("#quiz").hide();
         console.log("number right: "+ right +", number wrong: "+ wrong);
-        $('#score').html("You got "+right +" correct out of 10. Thanks for playing!")
-    })
+        $('#score').html("You got <strong> "+right +"</strong>  correct out of <strong> 10 </strong>. <br> Thanks for playing!")
+        $('#score').show();
+        $('#reset').show();
+        $('#submit').hide();
+    }
 
 //if box is checked and value is right, then increment correct variable
 

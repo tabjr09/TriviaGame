@@ -3,6 +3,7 @@ body{
     font-family: 'Ubuntu', sans-serif;
     /*background-color: skyblue;*/
     background-image: url("../images/cd2.jpeg");
+    
 
 
 }
@@ -29,4 +30,13 @@ body{
 
 .question{
     font-weight: bold;
+}
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: burlywood;
 }
