@@ -5,6 +5,7 @@
     var intervalId;
 
     Initialize();
+    console.log("Initialized called");
 
     function Initialize(){
 
@@ -17,6 +18,8 @@
         $('#time-remaining').hide();
         $('#reset').hide();
         $('#submit').hide();
+
+        console.log("Initialized finished");
   
     }
 
